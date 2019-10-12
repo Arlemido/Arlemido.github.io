@@ -2,5 +2,17 @@
   display: none;
 }
 #tabl:target {
-		display: block;
-		}
+	display: block;
+}
+#kart{
+  display: none;
+}
+#kart:target {
+	display: block;
+}
+#tex{
+  display: none;
+}
+#tex:target {
+	display: block;
+}
