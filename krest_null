@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div class="header">
+    <input type="text" id="filed_size" value="10">
+    <button onclick="loadTable()">Go</button>
+  </div>
+  <div class="game_table">
+    <table id = "iTable">
+
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+<!--  <script src="js/vendor/modernizr-3.7.1.min.js"></script>-->
+<!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+<!--  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>-->
+<!--  <script src="js/plugins.js"></script>-->
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
+<!--  <script>-->
+<!--    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;-->
+<!--    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')-->
+<!--  </script>-->
+<!--  <script src="https://www.google-analytics.com/analytics.js" async></script>-->
+</body>
+
+</html>
+
+
+
+
+
+
+css
+
+
+
+
+
+body{
+  background-color: bisque;
+}
+
+table{
+  border-collapse: collapse;
+  margin: auto;
+}
+
+td {
+  border: 2px solid #000000;
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+.game_table {
+  margin: auto;
+  text-align: center;
+}
+
+.header{
+  padding-left: 100px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: left;
+  background-color: green;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+js
+
+
+
+
+
+function loadTable() {
+  let myTable = document.getElementById("iTable");
+  let fild_size = document.getElementById("filed_size").value;
+  let nx = fild_size;
+  let ny = fild_size;
+  myTable.innerHTML = "";
+  for (let i = 0; i < nx; ++i) {
+    let newTableLine = document.createElement("tr");
+    for (let j = 0; j < ny; ++j){
+      let newTableCell = document.createElement("td");
+
+      newTableCell.setAttribute("id","cell_"+(i+1)+"_"+(j+1));
+
+      newTableCell.cellStatus = "nothing";
+      newTableCell.x_value = i+1;
+      newTableCell.y_value = j+1;
+
+      newTableCell.addEventListener("mousedown",cellMouseDown);
+      newTableLine.appendChild(newTableCell);
+    }
+    myTable.appendChild(newTableLine);
+  }
+}
+
+function cellMouseDown(e) {
+  e = e || window.event;
+  switch (e.which){
+    case 1:
+      if (this.style.backgroundImage == ""){
+        this.style.backgroundImage = "url( img/crug.png)";
+        checkWin(this.x_value, this.y_value,"url( img/crug.png)")
+      }
+      break;
+    case 3:
+      if (this.style.backgroundImage == ""){
+        this.style.backgroundImage = "url(img/crest.png)";
+        checkWin(this.x_value, this.y_value, "url(img/crest.png)")
+      }
+      break;
+  }
+}
+
+function  checkWin( x,y, imgf){
+  let count = 0;
+  switch(x,y) {
+    case x+1,y :
+    case x-1,y :
+      do {
+        let i = 0;
+        let j = 0;
+        i++;
+        j=0;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
+
+      } while (i < 10);
+
+      do {
+        let i = 0;
+        let j = 0;
+        i--;
+        j=0;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
+
+      } while (i >10);
+      break;
+
+    case x+1,y+1 :
+    case x-1,y-1 :
+    ...
+      break;
+
+    case x,y+1 :
+    case x,y-1 :
+    ...
+      break;
+
+    case x-1,y+1 :
+    case x+1,y-1 :
+    ...
+      break;
+
+
+  }
+}
+
+
