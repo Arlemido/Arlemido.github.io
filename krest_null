@@ -153,9 +153,11 @@ function cellMouseDown(e) {
 
 function  checkWin( x,y, imgf){
   let count = 0;
-  switch(x,y) {
-    case x+1,y :
-    case x-1,y :
+  switch(imgf) {
+  
+    case document.getElementById("cell_"+(x+1)+"_"+(y)).style.backgroundImage :
+    case document.getElementById("cell_"+(x-1)+"_"+(y)).style.backgroundImage :
+    
       do {
         let i = 0;
         let j = 0;
@@ -164,7 +166,7 @@ function  checkWin( x,y, imgf){
         if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
           count++;
 
-      } while (i < 10);
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
 
       do {
         let i = 0;
@@ -174,26 +176,81 @@ function  checkWin( x,y, imgf){
         if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
           count++;
 
-      } while (i >10);
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
       break;
 
-    case x+1,y+1 :
-    case x-1,y-1 :
-    ...
+    case document.getElementById("cell_"+(x+1)+"_"+(y+1)).style.backgroundImage :
+    case document.getElementById("cell_"+(x-1)+"_"+(y-1)).style.backgroundImage :
+    
+      do {
+          let i = 0;
+          let j = 0;
+          i++;
+          j++;
+          if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+            count++;
+
+        } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
+
+        do {
+          let i = 0;
+          let j = 0;
+          i--;
+          j--;
+          if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+            count++;
+
+        } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
+        break;
+
+    case document.getElementById("cell_"+(x)+"_"+(y+1)).style.backgroundImage :
+    case document.getElementById("cell_"+(x)+"_"+(y-1)).style.backgroundImage :
+    
+      do {
+        let i = 0;
+        let j = 0;
+        i=0;
+        j++;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
+
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
+
+      do {
+        let i = 0;
+        let j = 0;
+        i=0;
+        j--;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
+
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
       break;
 
-    case x,y+1 :
-    case x,y-1 :
-    ...
-      break;
+    case document.getElementById("cell_"+(x-1)+"_"+(y+1)).style.backgroundImage :
+    case document.getElementById("cell_"+(x+1)+"_"+(y-1)).style.backgroundImage :
+    
+      do {
+        let i = 0;
+        let j = 0;
+        i--;
+        j++;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
 
-    case x-1,y+1 :
-    case x+1,y-1 :
-    ...
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
+
+      do {
+        let i = 0;
+        let j = 0;
+        i++;
+        j--;
+        if(document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf )
+          count++;
+
+      } while (document.getElementById("cell_"+(x+i)+"_"+(y+j)).style.backgroundImage = imgf);
       break;
 
 
   }
 }
-
-
