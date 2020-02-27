@@ -1,0 +1,270 @@
+body
+{
+    font : .8em Arial, sans-serif;
+    position : relative;
+    z-index : 0;
+    margin : 0;
+    padding : 0 0 1em 0;
+    color : #000;
+    background : #fff
+}
+* {
+    font-size : 100 % ;
+    margin : 0
+}
+
+.b-bandit {
+    position : relative;
+    width : 350px;
+    min-height : 250px
+}
+.b-bandit__head {
+    font-size : 180 % 
+}
+.b-bandit__automat
+{
+    width : 288px;
+    height : 200px;
+    margin : 5px 0 0 0;
+    background : url(../icons/one_armed_bandit.png) no-repeat
+}
+.b-bandit__weekday
+{
+    font-size : 100 % ;
+    font-weight : normal;
+    width : 33 %!important;
+    height : 76px;
+    vertical-align : bottom;
+    white-space : nowrap
+}
+.b-bandit__weekend
+{
+    font-size : 100 % ;
+    font-weight : normal;
+    width : 33 %!important;
+    height : 76px;
+    vertical-align : bottom;
+    white-space : nowrap;
+    color : #F30
+}
+.b-bandit__weekday__wrapper {
+    padding : 0 10px 10px 15px
+}
+.b-bandit__weekday__dayname {
+    font-size : 190 % ;
+    display : block;
+    margin : 0
+}
+.b-bandit__precipitation {
+    font-size : 85 % ;
+    height : 86px;
+    padding : 0 10px 0 15px
+}
+.b-bandit__temperature {
+    height : 38px;
+    vertical-align : bottom
+}
+.b-bandit__temperature__wrapper {
+    padding : 0 10px 8px 15px
+}
+.b-bandit__light, .b-bandit__dark {
+    font-size : 165 % ;
+    display : block;
+    margin : 0;
+    white-space : nowrap
+}
+.b-bandit__dark {
+    font-size : 100 % ;
+    color : #71716f
+}
+.b-bandit__hint {
+    font-size : 120 % ;
+    height : 2em;
+    margin-top : 10px
+}
+.b-bandit__automat .b-wea-icon {
+    display : block;
+    float : none;
+    margin-bottom : .6em
+}
+.b-bandit__automat .b-wea-icon img {
+    display : block
+}
+.b-bandit__arm {
+    position : absolute;
+    top : 4em;
+    left : 288px
+}
+.b-bandit__arm .arm {
+    cursor : pointer
+}
+.b-1april-message {
+    padding : 1em 0;
+    width : 300px
+}
+.b-scroll-wrapper {
+    position : relative;
+    overflow : hidden;
+    height : 86px
+}
+.b-scroll-wrapper, .b-scroll-wrapper .cell {
+    height : 86px
+}
+.b-scroll-wrapper .scrollable {
+    position : absolute
+}
+.y5-w-window {
+    visibility : hidden;
+    position : absolute;
+    z-index : 1;
+    margin : 0
+}
+.y5-w-window.y5-w-visible {
+    visibility : visible
+}
+.y5-w-window-view, .y5-w-modal {
+    position : absolute;
+    top : 0;
+    left : 0
+}
+.y5-w-window-view {
+    z-index : 9999
+}
+.y5-w-modal
+{
+    opacity : .2;
+    filter : alpha(opacity = 20);
+    background : #000;
+    width : expression(y5.Dom.viewport().width);
+    height : expression(y5.Dom.viewport().height);
+    top : expression(y5.Element.scroll(document).top);
+    left : expression(y5.Element.scroll(document).left)
+}
+.y5-w-modal iframe
+{
+    filter : alpha(opacity = 0);
+    background : transparent;
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100 % ;
+    height : 100 % 
+}
+.y5-w-modal-opera {
+    background : transparent
+}
+.y5-w-window .y5-w-frame {
+    border : 1px solid #bbd;
+    background-color : white
+}
+.y5-w-window .y5-w-shadow, .y5-w-window .y5-w-fakeframe
+{
+    z-index :- 1;
+    position : absolute;
+    top : 0;
+    left :- 3px;
+    bottom :- 3px;
+    right :- 3px;
+    background : #001;
+    -moz-border-radius : 3px;
+    -webkit-border-radius : 3px;
+    border-radius : 3px;
+    opacity : .04;
+    filter : alpha(opacity = 4);
+    width : expression((this.parentNode.offsetWidth + 6) + 'px');
+    height : expression((this.parentNode.offsetHeight + 3) + 'px')
+}
+.y5-w-window .y5-w-shadow2
+{
+    top : 4px;
+    left :- 2px;
+    bottom :- 2px;
+    right :- 2px;
+    width : expression((this.parentNode.offsetWidth + 4) + 'px');
+    height : expression((this.parentNode.offsetHeight-2) + 'px')
+}
+.y5-w-window.y5-w-window-modal .y5-w-shadow
+{
+    top : 3px;
+    left :- 2px;
+    bottom :- 2px;
+    right :- 2px;
+    width : expression((this.parentNode.offsetWidth + 4) + 'px');
+    height : expression((this.parentNode.offsetHeight-1) + 'px')
+}
+.y5-w-window.y5-w-window-modal .y5-w-shadow2
+{
+    top : 2px;
+    left :- 1px;
+    bottom :- 1px;
+    right :- 1px;
+    width : expression((this.parentNode.offsetWidth + 2) + 'px');
+    height : expression((this.parentNode.offsetHeight-1) + 'px')
+}
+.y5-w-window .y5-w-fakeframe iframe {
+    position : absolute;
+    width : 100 % ;
+    height : 100 % ;
+    opacity : .01;
+    filter : alpha(opacity = 1)
+}
+.y5-w-window.y5-w-popup .y5-w-content {
+    margin : 1em
+}
+.y5-w-menu .y5-w-content {
+    padding : 0
+}
+.y5-w-window.y5-w-menu .y5-w-shadow, .y5-w-window.y5-w-menu .y5-w-fakeframe
+{
+    top : 2px;
+    left :- 2px;
+    bottom :- 2px;
+    right :- 2px;
+    opacity : .07;
+    filter : alpha(opacity = 7);
+    width : expression((this.parentNode.offsetWidth + 4) + 'px')
+}
+.y5-w-window.y5-w-menu .y5-w-shadow2 {
+    display : none
+}
+.y5-w-menu .y5-w-menu-item
+{
+    white-space : nowrap;
+    cursor : pointer;
+    padding-left : 18px;
+    padding-right : 18px;
+    border : 1px solid #fff;
+    overflow : hidden
+}
+.y5-w-menu .y5-w-menu-item.new
+{
+    background-image : url(http://img.yandex.net/maps/i/new.gif);
+	background-position:.4em .6em;
+	background-repeat:no-repeat
+}
+.y5-w-menu .y5-w-menu-item-active {
+    background-color : #7379a5
+}
+.y5-w-menu .y5-w-menu-item-disabled {
+    opacity : .4
+}
+.y5-w-menu .y5-w-menu-item a, .y5-w-menu .y5-w-menu-item a : visited {
+    color : #337;
+    width : auto;
+    display : block;
+    padding : .4em .6em;
+    text-decoration : none
+}
+.y5-w-menu .y5-w-menu-item-active a, .y5-w-menu .y5-w-menu-item-active a : visited {
+    color : white
+}
+.y5-w-menu .y5-w-menu-item a {
+    outline : none
+}
+ * html .y5-w-menu .y5-w-menu-item-disabled a, * html .y5-w-menu .y5-w-menu-item-disabled a : visited {
+    color : #88a
+}
+.y5-w-menu .y5-w-menu-separator {
+    margin : .3em;
+    border-top : 1px solid #636995
+}
