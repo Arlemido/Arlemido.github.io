@@ -1,0 +1,36 @@
+<div class="container main_container" >
+    <div class="row">
+        <div class="col-12">
+            <h1 class="all_book">{{My_book.name}}</h1>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="statia">
+
+                <div class="row"ng-repeat="book in books>
+                    <div class="col-5">
+                        <img ng-src=" {{book.picture.url}}" alt="Картинка" title="Картинка" class="book_img">
+                    </div>
+                    <div class="col-7">
+                        <div class="info_book">
+                            <div class="title_book">
+                                <h4><a href="">{{book.name}}</a></h4>
+
+                            </div>
+                            <div class="author_book">
+                                <a href="">{{book.autor}}</a>
+                            </div>
+                            <div class="discription_book">
+                                <p>{{book.discription}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>

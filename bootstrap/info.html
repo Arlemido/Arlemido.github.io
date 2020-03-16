@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<div class = "row" >
+    <div class="col-6 my-3 mx-auto" ng-repeat="book in books">
+        <div class="statia">
+
+            <div class="row">
+                <div class="col-7">
+                    <div class="info_book">
+                        <div class="name_book">
+                            <a href="">{{book.name}}</a>
+                        </div>
+                        <div class="author_book">
+                            <a href="">{{book.autor}}</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+
+
+        $http.get("JSON/inf.json").then(function(response) {
+
+            $scope.books = response.data;
+
+        });
+    });
+</script>
+</body>
+</html>

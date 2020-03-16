@@ -1,0 +1,61 @@
+<div class="container main_container" >
+    <div class="row">
+        <div class="col-12">
+            <h1 class="all_book">все книги</h1>
+        </div>
+        <div class="col-12">
+            <h4 class="title_genre">Жанры</h4>
+            <hr>
+        </div>
+
+        <div class="col-12">
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Жанры
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Фантастика</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 my-3 mx-auto">
+
+        </div>
+    </div>
+    <div class = "row" >
+        <div class="col-6 my-3 mx-auto" ng-repeat="book in books">
+            <div class="statia">
+
+                            <div class="row">
+                                <div class="col-5">
+                                    <img ng-src=" {{book.picture.url}}" alt="Картинка" title="Картинка" class="book_img">
+                                </div>
+                                <div class="col-7">
+                                    <div class="info_book">
+                                        <div class="title_book">
+                                            <h4><a href="">{{book.name}}</a></h4>
+
+                                        </div>
+                                        <div class="author_book">
+                                            <a href="">{{book.autor}}</a>
+                                        </div>
+                                        <div class="discription_book">
+                                <p>{{book.discription}}</p>
+                            </div>
+                            <div class="button_more ">
+                                <a href="#!{{book.id}}" class="btn btn-success">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+.block1{
+	background: #9587EB;
+}
+.block{
+	height: 200px;
+	background: red;
+}
+.block2{
+	height: 200px;
+	background: #C634DC;
+}
+
+div,p,a,img,button{ 
+	box-sizing: border-box;/*Свойства width и height включают в себя значения полей и границ*/
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+ul,li{
+	display: block;
+	padding: 0;
+    margin: 0;
+}
+body{
+	font-family: 'Philosopher', sans-serif;
+	background: #ececec;
+}
+.header{
+	background: #fff;
+	border-bottom: 1px solid #46318A;
+}
+.icon{
+	display: block;
+	background: url(../img/icon.png) center no-repeat;
+	height: 70px;
+	width: 100px; 
+}
+
+.menu__item{
+	margin-left:40px;
+}
+.menu__item a{
+	font-family: 'Philosopher', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	color:#8D9CF4;
+}
+
+.menu__item a:hover{
+	color: #4149EE;
+}
+
+
+.logo{
+	margin-top: 20px;
+	font-size: 28px;
+
+}
+.shrift{
+	color: red;
+	font-weight: 700;
+}
+.shrift1{
+	color: #D30ACC;
+	font-weight: 700;
+}
+/****************************************************/
+.main_container{
+	box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+	min-height: 100vh;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background: #fff;
+	padding: 20px 30px;
+}
+.all_book{
+	color: #121666;
+	text-transform: uppercase;
+}
+.title_genre{
+	margin-top: 10px;
+	color: #121666;
+}
+.statia{
+	background-color: #fff;
+    box-shadow: 0 2px 4px rgba(10,0,0,0.3);
+    height: 340px;
+}
+.author_book a{
+	color:#9F9CAD;
+}
+.info_book{
+	display: flex;
+	flex-direction: column;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+.title_book{
+	height: 70px;
+}
+.discription_book{
+	margin-top: 20px;
+}
+.button_more{
+	display: flex;
+	margin-left: auto;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.book_img{
+	width: 200px;
+	height: 303px;
+}
